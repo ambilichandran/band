@@ -1,0 +1,60 @@
+{% extends "theme.html" %}
+{% block content %}
+{% load static %}
+<div class="slide" style="margin-top: -25px;">
+  <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="{% static 'image/image/band4.jpg' %}" alt="" style="height: 500px;" >
+          <div class="centered" style="color:rgb(235, 239, 243)">
+              <h1 style="margin-bottom: 20px; font-family: Calibri;" class="slide-down">MIDNIGHT MELODY</h1>
+              <h5 style="font-family: Verdana;" class="slide-down">Where indie-rock meets
+                  atmospheric pop, weaving enchanting 
+                  harmonies under starry skies.
+              </h5>
+              <a href="/about" class="btn btn-primary">more</a>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<div class="slide-down">
+<div class="bandmem" style="text-align: center; margin-top: 50px;font-family:Times New Roman; ">
+  <h1>TEAM</h1>
+</div>
+<div class="container">
+<div class="row" style="margin-top: 50px;">
+{% for a in mem %}
+<div class="col-md-6">
+<div class="card" style="width: 20rem; margin-left: 100px; margin-bottom: 10px;">
+  <img class="card-img-top" src="{{a.img.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{a.name}}({{a.equip}})</h5>
+    <p class="card-text">{{a.about}}</p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+<div class="slide-down" style="background-color: black; margin-top: 50px;">
+  <div class="card2" style="text-align: center; background-color: rgb(23, 26, 28); color: rgb(220, 206, 208);font-size: 400px;">
+    <h1 style="margin-bottom: 50px;">Instruments</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      {% for a in data %}
+      <div class="col-md-4">
+  <div class="card" style="width: 288px; height: 640px; margin-bottom: 15px;">
+      <img src="{{a.image.url}}" class="card-img-top" alt="..." style="height: 300px; width: 290px;">
+      <div class="card-body" style="margin-left: 20px;">
+        <h5 class="card-title">{{a.name}}</h5>
+        <p class="card-text">{{a.description}}</p>
+      </div>
+  </div>  
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+  {% endblock %}

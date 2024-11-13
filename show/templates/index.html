@@ -1,0 +1,52 @@
+{% extends "theme.html" %}
+{% block content %}
+{% load static %}
+<div class="slide" style="margin-top: -25px;">
+  <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="{% static 'image/image/band4.jpg' %}" alt="" style="height: 500px;" >
+          <div class="centered" style="color:rgb(235, 239, 243)">
+              <h1 style="margin-bottom: 20px; font-family: Calibri;" class="slide-down">MIDNIGHT MELODY</h1>
+              <h5 style="font-family: Verdana;" class="slide-down">Where indie-rock meets
+                  atmospheric pop, weaving enchanting 
+                  harmonies under starry skies.
+              </h5>
+              <a href="/about" class="btn btn-primary">more</a>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<div class="slide-down" style="margin-left: 630px;.font-size: 400px;">
+  <h1>Rock Bands</h1>
+</div>
+<div class="slide-down">
+    <img src="{% static 'image/image/band.jpg' %}" alt="" style="height: 300px;width: 300px; margin-bottom: 100px;margin-left: 550px; border-radius: 270px;">
+</div>
+  <div class="slide-down" style="font-size: medium; height: 200px; width: 600px; margin-left: 450px ; margin-top: -90px;">
+  <h6>A rock band or pop band is a small musical ensemble that performs rock music, pop music, or a related genre. A four-piece band is the most common configuration in rock and pop music. In the early years, the configuration was typically two guitarists (a lead guitarist and a rhythm guitarist, with one of them singing lead vocals), a bassist, and a drummer (e.g. the Beatles and KISS). Another common formation is a vocalist who does not play an instrument, electric guitarist, bass guitarist, and a drummer. Sometimes, in addition to electric guitars, electric bass, and drums, also a keyboardist (especially a pianist) plays.
+    Additionally, rock and pop bands can also include boy bands or girl bands, which many times have bands where the members do not play any instruments but sing and dance instead. </h6>
+  </div>
+</div>
+</div>
+<div class="slide-down" style="margin-top: 50px;">
+<div class="block">
+  <div class="container">
+    {% for a in concert %}
+  <div class="trans">
+  <div class="card" style="width: 18rem; height: 200px; margin-left: 430px; margin-bottom: 50px; background-color: black;">
+  <div class="centered">
+    <div class="body" style="text-align: center;width: 200px;color: rgb(238, 226, 226);">
+      <h4 class="card-title">{{a.band}}</h4>
+      <h6 class="card-text">Venue:{{a.venue}}</h6>
+      <h6 class="card-text">Date:{{a.date}}</h6>
+      <h6 class="card-text">at:{{a.time}}</h6>
+      <a href="{% url 'book' %}" class="btn btn-primary">Book your Ticket</a>
+    </div>
+  </div>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

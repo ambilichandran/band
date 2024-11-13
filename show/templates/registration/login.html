@@ -1,0 +1,17 @@
+{% block content %}
+{% load static %}
+<div class="log" style="text-align: center; border:1px solid; ;color: white; background-repeat: no-repeat; background-position: center; background-image: url({% static 'image/image/bg2.jpg' %});">
+<div class="card mt-5" style="height: 100%;width: 100%;">
+    <div class="card-header" style="font-size: 40px;padding-top: 200px">
+      Login your Account
+    </div>
+    <div class="card-body" style="font-size: 20px; margin-top: 20px;">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="padding: 5px;margin-top: 10px;">Login</button>
+        </form> 
+    </div>
+  </div>
+</div>
+{% endblock %}

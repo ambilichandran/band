@@ -1,0 +1,46 @@
+{% extends "theme.html" %}
+{% block content %}
+{% load static %}
+<div class="body">
+    <div class="article" style="background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url({% static 'image/image/bg7.jpg' %});">
+        <div class="news" style="font-family: Calibri; text-align: center; margin-top: 50px;">
+          <h1 style="text-align: center; color: rgb(238, 233, 243); padding-top: 50px;">" The Story Behind Our Latest Single"</h1>
+        <div class="alb">
+    <h1 style="font-family: cursive; margin-top: 30px;" class="slide-down">Albums</h1>
+    <p style="width: 400px; margin-left: 480px;" class="slide-down">Memories are treasured moments of our past, etched in our minds and hearts, shaping who we are today and influencing the memories we create tomorrow.</p>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" style="margin-left: 450px;">
+                    <img class="d-block w-90" src="{% static 'image/image/bg5.jpg' %}" alt="First slide" style="height: 450px;width: 450px;">
+                  </div>
+                {% for a in album %}
+                  <div class="carousel-item" style="margin-left: 450px">
+                    <img class="d-block w-90" src="{{a.image.url}}" alt="Second slide" style="height: 450px; width: 450px;">
+                  </div>
+                {% endfor %}
+                </div>
+        </div>
+<div class="content" style="background-color: black; opacity: 0.9;">
+    <h1 style="margin-top: 200px; color: white;" class="slide-down">Our Latest News</h1>
+    <p style="width: 500px; font-size: 18px; margin-left: 430px; color: white;" class="slide-down">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+<div class="container" style="margin-left: 250px; margin-top: 50px;">
+    <div class="row">
+        {% for a in news %}
+    <div class="card" style="width: 18rem; margin-left: 10px;">
+    <img src="{{a.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h6>{{a.date}}</h6>
+        <h5 class="card-text">{{a.heading}}</h5>
+        <p class="card-text">{{a.main}}</p>
+    </div>
+    </div>
+  {% endfor %}
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="">
+</div>
+
+{% endblock %}

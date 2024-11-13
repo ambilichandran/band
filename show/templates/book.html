@@ -1,0 +1,27 @@
+{% extends "theme.html" %}
+{% block content %}
+{% load static %}
+<body style="background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url({% static 'image/image/mm.jpg' %});">
+<form method="post">
+  <div class="form" style="border:2px solid;margin-top: 300px; width: 700px; height: 500px;margin-left: 300px;background-color: rgb(247, 246, 246);">
+    {% csrf_token %}
+    <div class="mb-3" style="text-align: center; border:1px solid;">
+    <h1>Enter your Details</h1>
+    </div>
+    <div class="col-md-2" style="margin-left: 200px; margin-top: 50px;">
+    <label for="">May i know your name, please? <input type="text" name="name" id="" value="{{user.get_username }}" style="width: 300px;" readonly></label>
+   <label for=""> What is your residantial address? <input type="text" name="address" id="" style="width: 300px;"></label>
+    <label for="">Could you kindly furnish your email ID? <input type="text" name="email" id="" style="width: 300px;"></label>
+    <label for="">How can i dail up?<input type="text" name="phone" id="" style="width: 300px;"></label>
+    {% for a in concert %}
+    <input type="hidden", name="venue" value="{{a.venue}}">
+    <input type="hidden", name="date" value="{{a.date}}">
+    <input type="hidden", name="time" value="{{a.time}}">
+    {% endfor %}
+  <button type="submit">Book Now</button>
+  </div>
+  </form>
+</div>
+</div>
+</body>
+  {% endblock %}

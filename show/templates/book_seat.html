@@ -1,0 +1,15 @@
+{% block content %}
+{% load static %}
+<div class="body" style="margin-left: 350px; margin-top: 150px;">
+<h2>Book Seat {{ seat.number }} and Name :{{name.name}}</h2>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;">Full Name: {{data.name}} </li>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;">Address: {{data.address}} </li>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;">Email ID: {{data.email}}</li>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;">Phone Number:{{data.phone}} </li>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;"> Venue:{{data.venue}} </li>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;">Date: {{data.date}} </li>
+   <li style="border: 1px solid; font-size: 20px; width: 600px;padding-top: 20px;">Time: {{data.time}} </li>
+</div> 
+    <a href="{% url 'book' %}">  <button type="submit" class="btn btn-primary" style="font-size: 20px; margin-left: 500px;">Confirm Booking</button></a>
+    <button type="submit" class="btn btn-success" style=" margin-top: 20px; font-size: 20px;">Download</button>
+{% endblock %}

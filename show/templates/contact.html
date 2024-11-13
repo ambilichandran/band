@@ -1,0 +1,51 @@
+{% extends "theme.html" %}
+{% block content %}
+{% load static %}
+<div class="contact" style=" background-image: url({% static 'image/image/band2.jpg' %});">
+<div class="container" style="width: 700px; height: 700px; margin-top: 50px;margin-left: 350px;">
+  <div class="contact1" style="text-align: center; padding-top: 50px; color: white;">
+    <h1 style="font-family: Lobster, cursive;" class="slide-down">Get Registered!</h1>
+    <h6 style="font-family: cursive; margin-top: 20px;" class="slide-down">"Get in touch with us to plan your dream event!Contact us through our online form, phone, or email to more."</h6>
+</div>
+<form action="" method="post">
+  {% csrf_token %}
+        <div class="mb-3">
+          {{form.name}}
+          </div>
+          <div class="mb-3">
+           {{form.email}}
+          </div>
+          <div class="mb-3">
+          {{form.phone}}
+          </div>
+          <div class="mb-3">
+          {{form.message}}
+          </div>
+        <button type="submit" class="btn btn-primary">Send Your Message</button>
+      </form>
+</div>
+<div class="testmonial" style="background-color: rgb(253, 248, 248);">
+  <h1 style="font-family: cursive ; color: rgb(236, 101, 101); text-align: center; padding-top: 50px;" class="slide-down">Feedback</h1>
+      <div class="swiper mySwiper" style="padding-top: 50px;">
+        <div class="swiper-wrapper">
+          {% for a in testmonial %}
+          <div class="swiper-slide">
+            <div class="card" style="width: 25rem;height: 12rem; border: 2px solid;">
+              <div class="card-body" style="background-color: rgb(216, 96, 96); border-radius: 270px;">
+                <h5 class="card-title" style="text-align: center;">{{a.name}}</h5>
+                <h5 class="card-title">{{a.profession}}</h5>
+                <p class="card-text" style="margin-left: 30px;">{{a.message}}</p>
+              </div>
+            </div> 
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}

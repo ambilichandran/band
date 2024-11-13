@@ -1,0 +1,21 @@
+{% block content %}
+{% load static %}
+<div class="reg" style="margin-left: 50px; margin-top: 200px; border: solid; background-image:url({% static 'image/image/bg6.jpg' %}) ;">
+  <div class="box">
+<div class="container">
+<div class="card mt-5">
+    <div class="card-header" style="font-size: 40px; margin-left: 500px; padding: 10px;">
+      Create a Account
+    </div>
+<div class="card-body" ml-5 style="font-size: 20px; margin-left: 400px; margin-top: 50px;">
+<form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-outline-success" style="margin-top: 5px;"><a href="/">Create a account</a></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
